@@ -1,0 +1,226 @@
+Pyhton code, SQL, Kafka, AWS , Docker, Kubernetes, CI CD tools, ansible, git
+What did i know on the latest DevOps Technologies
+awk, top, volume, add user, and many more command for linux?
+
+awk, top, volume, add user, and many more command for linux?
+
+https://www.whizlabs.com/blog/ansible-modules/
+https://www.whizlabs.com/blog/ansible-advantages-and-disadvantages/#:~:text=Another%20prominent%20mention%20among%20the,fail%2C%20or%20any%20error%20comes.
+
+1) What Is Ansible?
+
+Ansible is a configuration management system. It is used to set up and manage infrastructure and applications. 
+It allows users to deploy and update applications using SSH, without needing to install an agent on a remote system.
+Ansible is used for managing IT infrastructure and deploy software apps to remote nodes.
+
+Q5) How Ansible Works?
+Ans: There are many similar automation tools available like Puppet, Capistrano, Chef, Salt, Space Walk etc,
+but Ansible categorize into two types of server: controlling machines 
+and nodes.
+
+The controlling machine, where Ansible is installed and Nodes are managed by this controlling machine over SSH. 
+The location of nodes are specified by controlling machine through its inventory.
+
+The controlling machine (Ansible) deploys modules to nodes using SSH protocol and these modules are stored temporarily on remote nodes 
+and communicate with the Ansible machine through a JSON connection over the standard output.
+
+Ansible is agent-less, that means no need of any agent installation on remote nodes, so it means there are no any background daemons or 
+programs are executing for Ansible, when it’s not managing any nodes.
+
+Ansible can handle 100’s of nodes from a single system over SSH connection and the entire operation can be handled and executed by one single command ‘ansible’.
+But, in some cases, where you required to execute multiple commands for a deployment, here we can build playbooks.
+Playbooks are bunch of commands which can perform multiple tasks and each playbooks are in YAML file format.
+
+Q7) Explain Ansible architecture?
+Ans: Ansible automation engine is the main component of Ansible, that interacts directly with the configuration management database, cloud services and 
+various users who write playbooks to execute it.
+
+The below figure depicts the Ansible architecture:
+
+Ansible Architecture
+
+The following are the components of the Ansible Automation engine:
+
+Modules: Ansible works effectively by connecting nodes and pushing out scripts called "Ansible modules". It helps to manage packages, system resources, files,
+libraries, etc.
+
+Inventories: These are the lists of nodes or hosts containing their databases, servers, IP addresses, etc. 
+
+APIs: These used for commuting public or private cloud services.
+
+Plugins: Plugins augment Ansible's core functionality. Also offers extensions and options for the core features of Ansible - transforming data, connecting 
+to inventory, logging output, and more. 
+
+Playbooks: Describes the tasks that need to be executed. They are simple code files written in YAML format and can be used to declare configurations,
+automating tasks, etc.
+
+Hosts: Hosts are node systems which are automated by Ansible on any machines like Linux, RedHat, Windows, etc.
+
+Networking: Ansible can be used to automate multiple networks and services. It uses a secure and simple automation framework for IT operations and development.
+
+Cloud: A system of remote servers that allows you to store, manage, and process data, rather than a local server.
+
+CMDB: It is a type of repository which acts as a data warehouse for the IT installations.
+
+Important terms used in Ansible
+Ansible server:
+The machine where Ansible is installed and from which all tasks and playbooks will be ran
+Module:
+Basically, a module is a command or set of similar Ansible commands meant to be executed on the client-side
+Task:
+A task is a section that consists of a single procedure to be completed
+Role:
+A way of organizing tasks and related files to be later called in a playbook
+Fact:
+Information fetched from the client system from the global variables with the gather-facts operation
+Inventory:
+File containing data about the ansible client servers. Defined in later examples as hosts file
+Play:
+Execution of a playbook
+Handler:
+Task which is called only if a notifier is present
+Notifier:
+Section attributed to a task which calls a handler if the output is changed
+Tag:
+Name set to a task which can be used later on to issue just that specific task or group of tasks.
+
+
+sudo apt-get update 
+$ sudo apt-get install software-properties-common 
+$ sudo apt-add-repository ppa:ansible/ansible $ sudo apt-get update 
+$ sudo apt-get install ansible
+---  
+james: 
+   name: james john 
+   rollNo: 34 
+   div: B 
+   sex: male 
+   likes: 
+      - maths 
+      - physics 
+      - english 
+… 
+Facts:
+You can think of ansible facts as a way for ansible to get information about a host and store them in variables for easy access. 
+This information stored in predefined variables are available to use in the playbook. To generate facts, ansible runs the setup module.
+
+3) What is Ansible Galaxy?
+
+Ansible can communicate with configured clients from the command line by using ansible command. 
+It also allows you to automate configuration by using ansible-playbook command. 
+To create the base directory structure, you can use a tool bundled with Ansible which is known as ansible-galaxy.
+
+8) Explain how you can copy file recursively onto a target host?
+
+The "copy" module has a recursive parameter. 
+However, if you want this to perform more efficient for a large number of files, then “synchronize” module is the best option for you.
+
+
+11) What is Ansible Tower?
+
+Ansible tower is a tool which makes Ansible very easy to use. 
+It acts as a hub for the task automation. The tower is free for usage till 10 nodes.
+
+15) Explain Ansible facts
+
+You can think of ansible facts as a way for ansible to get information about a host and store them in variables for easy access. 
+This information stored in predefined variables are available to use in the playbook. To generate facts, ansible runs the setup module.
+
+19) Discuss method to Create an Empty File with Ansible
+
+To create and empty file you need to follow given steps.
+
+Step 1. Save An Empty File into The Files Directory
+
+Step 2. Copy It to The Remote Host.
+
+Create file using ansible?
+
+- hosts: all
+  tasks:
+  - name: Ansible create file if it doesn't exist example
+    file:
+      path: "/Users/mdtutorials2/Documents/Ansible/devops_server.txt"
+      state: touch
+
+The following task will create a new file ‘remote_server.txt’ if the file is not present.
+
+- hosts: all
+  tasks:
+  - name: Ansible create file with content example
+    copy:
+      dest: "/Users/mdtutorials2/Documents/Ansible/remote_server.txt"
+      content: |
+        dog1
+        tiger
+		
+		
+In the below exmaple, I am creating a new file ‘devops,txt’ with mode as 0777 and owner as mdtutorials2. As you can see in the output, 
+all the permissions are set and the owner is given correctly.
+
+- hosts: all
+  tasks:
+  - name: Ansible create new file with permissions example.
+    file:
+      path: "/Users/mdtutorials2/Documents/Ansible/devops.txt"
+      state: touch
+      mode: 0777
+      owner: mdtutorials2
+	  
+Installing packages
+
+
+Use the action module to variableize actual module calls
+
+- name: install basic package
+  action: >
+    {{ ansible_pkg_mgr }} name=vim state=present update_cache=yes
+You can use Ansible's pseudo looping method to install multiple packages
+
+- name: install basic packages
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+    - vim
+    - tmux
+    - mosh
+	
+	
+	
+Installing System Updates
+yum does not have a update module option, so it basically check to see if all packages are up to date. apt upgrades to dist.
+
+- name: install system updates for centos systems
+  yum: name=* state=latest update_cache=yes
+  when: ansible_distribution == "CentOS"
+
+- name: install system updates for ubuntu systems
+  apt: upgrade=dist update_cache=yes
+  when: ansible_distribution == "Ubuntu"
+  
+  
+ Adding/Removing Repositories
+- name: add gnupg key for codership repo
+  apt-key: keyserver=keyserver.ubuntu.com id=BC19DDBA
+
+- name: add repo
+  apt_repository: repo='deb http://ubuntu-cloud.archive.canonical.com/{{ ansible_distribution | lower }} {{ ansible_distribution_release }}-updates/liberty main' state=present
+  
+  
+  name: install basic packages
+  action: >
+    {{ ansible_pkg_mgr }} name=ansible  state=present update_cache=yes
+	
+Installing in ubuntu:
+- hosts: webserver
+  tasks:
+    - name: install web components
+      become: yes
+      apt: 
+        name: ['apache2', 'libapache2-mod-wsgi', 'python-pip', 'python-virtualenv'] 
+        state: present 
+        update_cache: yes
+		
+command to run the playbook :$ ansible-playbook -v playbooks/webservers.yml
+
+    

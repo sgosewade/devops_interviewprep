@@ -1,0 +1,57 @@
+Git
+jenkins
+Nexus
+Docker
+Kubernetes
+Ansible
+GCP
+Python script
+Linux/Bash script
+
+merge conflict 
+python sorting without using library func
+git sequnce of creatinf/cloning
+if you add new to git
+if you modify existing file from the repo
+git snapshot ===git log details
+get last n number of commit details using git log
+how will you know if your file/changes is checkedin/pushed or not
+git status | git diff |git log
+search for merge question in git
+python files exist program
+unix if else for files and directory searching
+files permissions
+jenkins CI/CD concepts
+projects 
+
+MAKEFILE
+python debugging
+by using adding brekpoint in simulation
+git cherry-pick
+Write a Program to print the number of lines,words and characters present in the given file
+==>>read the file and count no of whitespaces
+git stash
+git reset SOFT vs HARD
+git revert
+git rebase
+git commit --
+
+
+python replace can be used in lists or not?
+Write a python program to replace delimeter as ':' with space and display output on console.==> use replace method pf strings
+dangling pointer 
+free 
+malloc calloc
+Q1) Introduce yourself technically. Q2) Asked about my projects. Q3) Asked about my educational background. 
+19)What is a Stack section? Q20)How will be variables allocated in memory? How will you access heap? Q21)How many types of interrupts are there?
+Why semaphores are not used for ISRs? Q26)How do you implement threads? Q27)What is the basic difference betw. multiple processes and multiple child processes?
+vvvvvimmpppppppQ6) What is the size of this data structure? (I answered about structure padding as he was expecting the same answer from me)
+Difference between Threads & Process
+1. What is a static variable? 2. What the difference between static and constant variable? 3. How do you declare a const pointer to an integer variable? 4. How do you declare a pointer to an integer constant? 5. What are the stages of compilation?
+
+rtc integration with jenkins
+why should we hire yu
+tell me somthing sbout yourself
+why do u want to join this company
+what is your approach towards a task or issue:
+Explain CI/CD pipeline

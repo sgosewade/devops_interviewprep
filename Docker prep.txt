@@ -1,0 +1,53 @@
+Why docker is preferred?
+
+Because Docker containers encapsulate everything an application needs to run (and only those things), they allow applications to be 
+shuttled easily between environments. Any host with the Docker runtime installed—be it a developer's laptop or a public cloud instance—can run a Docker container.
+
+How Are Docker Containers Created?
+A Docker image is built using a Docker file. The Docker file is a text-based script, and the text file within the Docker 
+file has all the commands to run the appropriate technologies within the Docker image. 
+
+The Docker image enables you to have a broad group of people run the same environment. 
+If you want to share a Docker image, uploading it to Docker Hub can easily accomplish this. 
+You can access and share on Docker Hub through the public Docker Hub website, or set up your private enterprise account. 
+
+
+The environment itself is highly portable 
+run multiple Docker containers in a single environment,
+allows you to scale your environment quickly. 
+fasr boot up time
+Docker ensures that applications that are running on containers are completely segregated and isolated from each other, 
+granting you complete control over traffic flow and management. 
+CI Efficiency.
+Compatibility and Maintainability.
+
+Docker Hub is a service provided by Docker for finding and sharing container images with your team. 
+It is the world’s largest repository of container images with an array of content sources including container community developers, 
+open source projects and independent software vendors (ISV) building and distributing their code in containers.
+
+Docker Hub provides the following major features:
+
+Repositories: Push and pull container images.
+Teams & Organizations: Manage access to private repositories of container images.
+Official Images: Pull and use high-quality container images provided by Docker.
+Publisher Images: Pull and use high- quality container images provided by external vendors.
+Builds: Automatically build container images from GitHub and Bitbucket and push them to Docker Hub.
+Webhooks: Trigger actions after a successful push to a repository to integrate Docker Hub with other services.
+
+Benefits of Docker Compose
+Single host deployment - This means you can run everything on a single piece of hardware
+Quick and easy configuration - Due to YAML scripts
+High productivity - Docker Compose reduces the time it takes to perform tasks
+Security - All the containers are isolated from each other, reducing the threat landscape
+
+docker
+
+Basic Commands in Docker Compose
+Start all services: Docker Compose up
+Stop all services: Docker Compose down
+Install Docker Compose using pip: pip install -U Docker-compose
+Check the version of Docker Compose: Docker-compose-v
+Run Docker Compose file: Docker-compose up -d
+List the entire process: Docker ps
+Scale a service - Docker Compose up -d -scale
+Use YAML files to configure application services - Docker Compose.yml

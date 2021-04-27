@@ -1,0 +1,64 @@
+UNIX COMMANDS!!!!
+
+1. free command
+The free command is the most simple and easy to use command to check memory usage on linux. 
+syntax: free -m
+
+2. /proc/meminfo
+to check memory usage is to read the /proc/meminfo file.
+syntax: cat /proc/meminfo
+
+3. vmstat
+The vmstat command with the s option, lays out the memory usage statistics much like the proc command. Here is an example
+$ vmstat -s
+
+4. /proc/cpuinfo
+The /proc/cpuinfo file contains details about individual cpu cores.
+Output its contents with less or cat.
+$ less /proc/cpuinfo
+
+5. lscpu - display information about the CPU architecture
+lscpu is a small and quick command that does not need any options. It would simply print the cpu hardware details in a user-friendly format.
+$ lscpu
+
+6. Check File System Disk Space Usage
+The “df” command displays the information of device name, total blocks, total disk space, used disk space, available disk space and mount points on a file system.
+$ df -a -h -m    m===> in mb -h===>in gb 
+$ df -hT /$path
+
+7.“du” (Disk Usage) is used to check the information of disk usage of files and directories on a machine.
+$du 
+$du -h /home/mandeep/test 
+
+							-0, –null : end each output line with NULL
+							-a, –all : write count of all files, not just directories
+							–apparent-size : print apparent sizes, rather than disk usage.
+							-B, –block-size=SIZE : scale sizes to SIZE before printing on console
+							-c, –total : produce grand total
+							-d, –max-depth=N : print total for directory only if it is N or fewer levels below command line argument
+							-h, –human-readable : print sizes in human readable format
+							-S, -separate-dirs : for directories, don’t include size of subdirectories
+							-s, –summarize : display only total for each directory
+							–time : show time of last modification of any file or directory.
+							–exclude=PATTERN : exclude files that match PATTERN
+
+8. fdisk
+Fdisk is the most commonly used command to check the partitions on a disk.
+The fdisk command can display the partitions and details like file system type. However it does not report the size of each partitions.
+$ sudo fdisk -l
+
+9. lsb_release
+The lsb_release command prints out distribution specific information about a linux distro.
+$ lsb_release -a
+
+$ lsb_release -a || cat /etc/redhat-release || cat /etc/*-release || cat /etc/issue
+If one option fails, the command moves to the next one, until one of them works. 
+The above command is not a well tested one and is expected to work fine only on ubuntu/debian and centos/fedora based systems.
+
+
+8.Run any one of the following command on Linux to see open ports:
+sudo lsof -i -P -n | grep LISTEN
+sudo netstat -tulpn | grep LISTEN
+sudo ss -tulpn | grep LISTEN
+sudo lsof -i:22 ## see a specific port such as 22 ##
+sudo nmap -sTU -O IP-address-Here

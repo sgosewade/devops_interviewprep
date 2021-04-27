@@ -1,0 +1,91 @@
+Tell me about yorself:
+
+Hi I am Sonali.
+I have been working with Tata elxsi Pune for more than past 3 yrs now as a Senior Engineer.
+
+I am a Senior Engineer with more than 3 years of work exp in softare development and devops
+I work under there automotive bu which comes under thier embeddded domain services
+
+Hi I am Sonali.
+I started off career as an Engineer with Tata Elxsi 
+I am a Senior Engineer with more than 3 years of work exp in software development and devops practices
+I work under there automotive bu which is a part of thier embeddded domain services where worked on development and integration of Infotainemnet systems, 
+Instrument Clusters, ecu,etc
+My responsibilities inlcuded:
+Developing, Maintaining and improving existing code and peer review code changes
+Defining and setting development, test, release, processes for DevOps operation
+Selecting and deploying appropriate CI/CD tools
+Mentoring and guiding the team members 
+
+
+In that role my major accomplishment was that we suggested the client with some advanced tools for improved performance of the ci/cd cycles and the idea was 
+approved by them Using those toolchains improved the performance and saved lot of time
+I understand that for this position of Build and Intergation engineer that you are hiring for you are looking for someone with strong knowledege on 
+SW release life cycle, build processes and integration techniques
+
+
+shravan poshetty
+
+Roles and responsibilities:
+Maintaining and improving existing codebases and peer review code changes
+Improving system quality by identifying issues and developing quality software
+Defining and setting development, test, release, update, and support processes for DevOps operation
+Troubleshooting techniques and fixing the code bugs
+Selecting and deploying appropriate CI/CD tools
+Mentoring and guiding the team members 
+Setting up tools and required infrastructure
+Coordination and communication within the team and with customers
+Providing written knowledge transfer material
+ 
+ 
+strenth dependable people and comm skills goes extramile
+
+
+weakness:
+in situations where there's a deadline to be met or a task which is complex I tend to put all my focus in there and wont budge till it is done and 
+in these situations I also tended to make my colleagues also work hard for it. Where i realised that taking breaks in between helps a lot and makes 
+you think clearly and you should not sacrifice that sleep which makes your intellectual capacity more clearer and understood everyone works in a 
+diffrent way and you should not interfare with thier thinking process
+
+
+why should i hire you??The position requires strong knowledege on SW release life cycle, build processes and integration techniques and  
+I believe that have the  relevant skills and experience with in these areas my background in embedded domain and automotive development 
+will definately going to be a plus and add th the growth of the company, also I do know that this position is going to a client deployment and 
+have  I have an strong experience of onsite deployment wherein I know how to interact with cliennt and there teams, at the same  time repesent my 
+company strong ethics and deliver great results. at one such deployment I have craeted integration framework where i brought several projects integration
+  jobs into onw job efffieciently and also at 
+
+We have established ourselves as a preferred partner for technology and excellence. At MosChip, we strive to provide unparalleled service and support to 
+our clients with on-time delivery being our strength and commitment. We aim to offer a unique combination of services and solutions giving them an advantage over
+ competitors in their industry by aligning ourselves to the vision of our clients.
+’ve heard of your reputation in the industry, and I would be proud to work for a company with such an excellent track record and a strong example of leadership in the industry. 
+ I've read employee testimonials and heard of your enthusiasm for encouraging employee growth through education, training, and vast resources. I already know that engaged employees produce better work, and that is evident in the most recent campaign
+
+why this company?
+
+Before the recruiter called me about this opportunity, I must admit that I didn't know much about your company. I've been doing some research
+ in preparation for this discussion, and I need to say that I'm impressed by your work and your vision for the future. 
+ I 'm genuinely interested in moving ahea with this domain and I read that you are growing/established in that area. 
+ As an experienced prof with an emphasis in technology, I know I can bring a lot of value to the team.
+
+Client First
+We succeed when our clients succeed. Our client-driven approach demonstrates our ability to collaborate and execute with excellence.
+
+
+Integrity is Execution
+The culture we continuously build is honest. There are no shortcuts. We deliver excellence with integrity in everything we do.
+
+
+Embracing a Global Network
+We embrace the power of a global network no matter where you perform business.
+
+
+Driven by Innovation
+ 
+
+questions to be asked:
+what are the biggest challenges i'll face in the first 90 days 
+and how will success be measured?
+how does my baackground compare to other candidates you're interviewing?
+After the covid pandemic which are the employee
+ friendly policies that have been added or updated in the company??

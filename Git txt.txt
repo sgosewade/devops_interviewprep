@@ -1,0 +1,236 @@
+resolve merge conflict in Git
+
+here are a few steps that could reduce the steps needed to resolve merge conflicts in Git.
+
+The easiest way to resolve a conflicted file is to open it and make any necessary changes
+After editing the file, we can use the git add a command to stage the new merged content
+The final step is to create a new commit with the help of the git commit command
+Git will create a new merge commit to finalize the merge
+Git Commands to Resolve Conflicts
+1. git log --merge 
+The git log --merge command helps to produce the list of commits that are causing the conflict
+
+2. git diff 
+The git diff command helps to identify the differences between the states repositories or files
+
+3. git checkout 
+The git checkout command is used to undo the changes made to the file, or for changing branches
+
+4. git reset --mixed 
+The git reset --mixed command is used to undo changes to the working directory and staging area
+
+5. git merge --abort
+The git merge --abort command helps in exiting the merge process and returning back to the state before the merging began
+
+6. git reset
+The git reset command is used at the time of merge conflict to reset the conflicted files to their original state
+
+7. Using git mergetool
+configure the tool
+git config merge.tool meld 
+you can solve merge conflicts
+git mergetool -t meld
+
+
+*****git sequnce of creatinf/cloning
+mkdir [directory- name]
+cd [directory- name]
+git config
+git init 
+git clone [URL]
+git add to add new file or modifying an existing folder
+git commit -m ""
+git push origin remote-branch-name
+git pull remote-branch-name to pull latest changes
+
+*****if you add new to git===>>>
+git add to add new file or modifying an existing folder
+git commit -m ""
+
+*****if you modify existing file from the repo===>>>
+git add to add new file or modifying an existing folder
+git commit -m ""
+
+*****git commit --amend -m ""
+The git commit --amend command is a convenient way to modify the most recent commit. 
+It lets you combine staged changes with the previous commit instead of creating an entirely new commit.
+It can also be used to simply edit the previous commit message without changing its snapshot.
+
+*****git snapshot ===
+git log details
+A snapshot/commit object is essentially metadata (author, date, message) and a snapshot of the contents of your work tree
+
+*****get last n number of commit details using
+ ==>>git log -n
+ 
+*****how will you know if your file/changes is checkedin/pushed or not
+==>git log --graph --all --decorate, git status | git diff |git log
+
+search for merge question in git
+
+*****git cherry-pick
+Cherry picking is the act of picking a commit from a branch and applying it to another.
+git cherry-pick commitSha
+
+*****i)git stash
+This command can be used when we want to save our work without staging or committing the code to our Git repository and want to switch between branches.
+ii): git stash -u
+This command is used when we want to stash the untracked files.
+iii): git stash pop
+This command is used when we are back on our branch and want to retrieve the code.
+
+*****git revert [commit id]
+
+The git revert command can be considered as an ‘undo’ command. However, it does not work as the traditional ‘undo’ operation.
+It figures out how to invert the changes introduced by the commit and appends a new commit with the resulting inverse content.
+
+git reset SOFT vs HARD
+exmaple:: - A - B - C (master)
+--soft: uncommit changes, changes are left staged (index). 							git reset --soft B
+--mixed (default): uncommit + unstage changes, changes are left in working tree.	git reset --mixed B
+--hard: uncommit + unstage + delete changes, nothing left.							git reset --hard B
+
+*****git rebase [base]
+Rebase is the process of moving and combining a sequence of commits to a new base commit. 
+Rebasing is changing the base of our branch from one commit to another, making it appear as if we’ve created our branch from a different commit.
+===>> git rebase master 
+
+*****python files exist program
+
+You have the os.path.exists function:
+
+import os.path
+os.path.exists(file_path)
+This returns True for both files and directories but you can instead use
+
+os.path.isfile(file_path)
+to test if it's a file specifically. It follows symlinks.
+*****python sorting without using library func
+
+unix if else for files and directory searching
+file="/.config/backup.cfg"
+#!/bin/bash
+FILE="$1"
+ 
+if [ -f "$FILE" ];
+then
+   echo "File $FILE exist."
+else
+   echo "File $FILE does not exist" >&2
+fi
+
+
+files permissions
+jenkins CI/CD concepts
+projects 
+Important differences between Python 2.x and Python 3.x
+MAKEFILE
+python debugging
+by using adding brekpoint in simulation
+Write a Program to print the number of lines,words and characters present in the given file
+==>>read the file and count no of whitespaces
+
+
+
+python replace can be used in lists or not?
+words = 'I like chicken'.split()
+replaced = ['turkey' if wd == "chicken" else wd for wd in words]
+print(replaced)
+Which outputs: ['I', 'like', 'turkey']
+
+Write a python program to replace delimeter as ':' with space and display output on console.==> use replace method of strings
+str2 = str.replace(":"," ")
+
+dangling pointer 
+free 
+malloc calloc
+Q1) Introduce yourself technically. Q2) Asked about my projects. Q3) Asked about my educational background. 
+19)What is a Stack section? Q20)How will be variables allocated in memory? How will you access heap? Q21)How many types of interrupts are there?
+Why semaphores are not used for ISRs? Q26)How do you implement threads? Q27)What is the basic difference betw. multiple processes and multiple child processes?
+vvvvvimmpppppppQ6) What is the size of this data structure? (I answered about structure padding as he was expecting the same answer from me)
+Difference between Threads & Process
+1. What is a static variable? 2. What the difference between static and constant variable? 3. How do you declare a const pointer to an integer variable? 4. How do you declare a pointer to an integer constant? 5. What are the stages of compilation?
+
+rtc integration with jenkins
+why should we hire yu
+tell me somthing sbout yourself
+why do u want to join this company
+what is your approach towards a task or issue:
+Explain CI/CD pipeline
+
+
+
+Tell me about yorself:
+
+Hi I am Sonali.
+I have been working with Tata elxsi Pune for more than past 3 yrs now as a Senior Engineer.
+
+I am a Senior Engineer with more than 3 years of work exp in softare development and devops
+I work under there automotive bu which comes under thier embeddded domain services
+
+Hi I am Sonali.
+I started off career as an Engineer with Tata Elxsi 
+I am a Senior Engineer with more than 3 years of work exp in software development and devops practices
+I work under there automotive bu which is a part of thier embeddded domain services where worked on development and integration of Infotainemnet systems, 
+Instrument Clusters, ecu,etc
+My responsibilities inlcuded:
+Developing, Maintaining and improving existing code and peer review code changes
+Defining and setting development, test, release, processes for DevOps operation
+Selecting and deploying appropriate CI/CD tools
+Mentoring and guiding the team members 
+In that role my major accomplishment was that we suggested the client with some advanced tools for improved performance of the ci/cd cycles and the idea was 
+approved by them Using those toolchains improved the performance and saved lot of time
+I understand that for this position of Build and Intergation engineer that you are hiring for you are looking for someone with strong knowledege on 
+SW release life cycle, build processes and integration techniques
+
+
+
+
+Roles and responsibilities:
+Maintaining and improving existing codebases and peer review code changes
+Improving system quality by identifying issues and developing quality software
+Defining and setting development, test, release, update, and support processes for DevOps operation
+Troubleshooting techniques and fixing the code bugs
+Selecting and deploying appropriate CI/CD tools
+Mentoring and guiding the team members 
+Setting up tools and required infrastructure
+Coordination and communication within the team and with customers
+Providing written knowledge transfer material
+
+
+
+weakness:
+in situations where there's a deadline to be met or a task which is complex I tend to put all my focus in there and wont budge till it is done and 
+in these situations I also tended to make my colleagues also work hard for it. Where i realised that taking breaks in between helps a lot and makes 
+you think clearly and you should not sacrifice that sleep which makes your intellectual capacity more clearer and understood everyone works in a 
+diffrent way and you should not interfare with thier thinking process
+
+
+why should i hire you??The position requires strong knowledege on SW release life cycle, build processes and integration techniques and  I believe that have the  relevant skills and experience with in these areas my background in embedded domain and automotive development will definately going to be a plus and add th the growth of the company, also I do know that this position is going to a client deployment and have  I have an strong experience of onsite deployment wherein I know how to interact with cliennt and there teams, at the same  time repesent my company strong ethics and deliver great results. at one such deployment I have craeted integration framework where i brought several projects integration  jobs into onw job efffieciently and also at 
+
+We have established ourselves as a preferred partner for technology and excellence. At MosChip, we strive to provide unparalleled service and support to our clients with on-time delivery being our strength and commitment. We aim to offer a unique combination of services and solutions giving them an advantage over competitors in their industry by aligning ourselves to the vision of our clients.
+’ve heard of your reputation in the industry, and I would be proud to work for a company with such an excellent track record and a strong example of leadership in the industry. 
+ I've read employee testimonials and heard of your enthusiasm for encouraging employee growth through education, training, and vast resources. I already know that engaged employees produce better work, and that is evident in the most recent campaign
+
+
+
+Before the recruiter called me about this opportunity, I must admit that I didn't know much about your company. I've been doing some research in preparation for this discussion, and I need to say that I'm impressed by your work and your vision for the future. I'm genuinely interested in getting more involved in the technological side of marketing, and I read that you are growing in that area. As an experienced marketer with an emphasis in technology, I know I can bring a lot of value to the team.
+
+Client First
+We succeed when our clients succeed. Our client-driven approach demonstrates our ability to collaborate and execute with excellence.
+
+
+Integrity is Execution
+The culture we continuously build is honest. There are no shortcuts. We deliver excellence with integrity in everything we do.
+
+
+Embracing a Global Network
+We embrace the power of a global network no matter where you perform business.
+
+
+Driven by Innovation
+ 
+
+questions to be asked:what are the biggest challenges i'll face in the first 90 days and how will success be measured?
+how does my baackground compare to other candidates you're interviewing?
+After the covid pandemic which are the employee friendly policies that have been added or updated in the company??
