@@ -1,7 +1,34 @@
 UNIX COMMANDS!!!!
 
+top allows you display of process statistics continuously until stopped vs. ps which gives you a single snapshot.
+top command is used to show the Linux processes. It provides a dynamic real-time view of the running system. 
+Usually, this command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.
+
+Top is the command used to get the list of running processes and resource utilization (RAM or CPU usage). 
+It gives  all the information about each process running on the host :
+
+Process ID (PID)
+Owner of the process(USER)
+Priority of process(PR)
+Percentage of CPU (%CPU)
+Percentage of memory
+Total CPU time spends on the process.
+Command used to start a process.
+
+ps command is used to list the currently running processes and their PIDs along with some other information depends on different options. 
+It reads the process information from the virtual files in /proc file-system. /
+
+ps (i.e., process status) command is used to provide information about the currently running processes, 
+including their PIDs (process identification numbers). A process is a running  instance of a program. 
+Every process is assigned a unique PID by the.
+
+Example:
+
+$ ps -ef
+$ ps -ef | grep tomcat
+
 1. free command
-The free command is the most simple and easy to use command to check memory usage on linux. 
+The free command is to check memory usage on linux. 
 syntax: free -m
 
 2. /proc/meminfo
@@ -9,6 +36,8 @@ to check memory usage is to read the /proc/meminfo file.
 syntax: cat /proc/meminfo
 
 3. vmstat
+a command-line utility that you can use to access information about 
+processes, CPU activity, memory
 The vmstat command with the s option, lays out the memory usage statistics much like the proc command. Here is an example
 $ vmstat -s
 
@@ -18,15 +47,18 @@ Output its contents with less or cat.
 $ less /proc/cpuinfo
 
 5. lscpu - display information about the CPU architecture
-lscpu is a small and quick command that does not need any options. It would simply print the cpu hardware details in a user-friendly format.
+lscpu is a small and quick command that does not need any options. 
+It would simply print the cpu hardware details in a user-friendly format.
 $ lscpu
 
 6. Check File System Disk Space Usage
-The “df” command displays the information of device name, total blocks, total disk space, used disk space, available disk space and mount points on a file system.
+The “df” command displays the information of device name, total blocks,
+total disk space, used disk space, available disk space and mount points on a file system.
 $ df -a -h -m    m===> in mb -h===>in gb 
 $ df -hT /$path
 
-7.“du” (Disk Usage) is used to check the information of disk usage of files and directories on a machine.
+7.“du” (Disk Usage) is used to check the information of disk usage 
+of files and directories on a machine.
 $du 
 $du -h /home/mandeep/test 
 
@@ -43,7 +75,8 @@ $du -h /home/mandeep/test
 							–exclude=PATTERN : exclude files that match PATTERN
 
 8. fdisk
-Fdisk is the most commonly used command to check the partitions on a disk.
+Fdisk is the most commonly used command to check the partitions on 
+a disk.
 The fdisk command can display the partitions and details like file system type. However it does not report the size of each partitions.
 $ sudo fdisk -l
 
@@ -55,6 +88,12 @@ $ lsb_release -a || cat /etc/redhat-release || cat /etc/*-release || cat /etc/is
 If one option fails, the command moves to the next one, until one of them works. 
 The above command is not a well tested one and is expected to work fine only on ubuntu/debian and centos/fedora based systems.
 
+/etc/fstab file  etc-fstab-file
+The /etc/fstab file is a system configuration file that contains all available disks, disk partitions and their options. 
+Each file system is described on a separate line. Each line contains six fields separated by one or more spaces or tabs. 
+If you add a new hard disk or have to repartition the existing one, you’ll probably need to modify this file.
+
+The /etc/fstab file is used by the mount command, which reads the file to determine which options should be used when mounting the specified device.
 
 8.Run any one of the following command on Linux to see open ports:
 sudo lsof -i -P -n | grep LISTEN
@@ -62,3 +101,206 @@ sudo netstat -tulpn | grep LISTEN
 sudo ss -tulpn | grep LISTEN
 sudo lsof -i:22 ## see a specific port such as 22 ##
 sudo nmap -sTU -O IP-address-Here
+https://phoenixnap.com/kb/check-cpu-usage-load-linux
+
+
+Type any one of the following command to find os name and version in Linux:
+
+cat /etc/os-release
+lsb_release -a 
+hostnamectl
+
+Also type the following command to find Linux kernel version:
+
+uname -r
+
+
+Define cron job and steps to configure a cron job to run every week “At 00:00 on Sunday.”?
+
+cron Job is similar to Task Scheduler in windows. corn is a software utility which schedules a command or script on your server to run automatically at a mentioned time and date. 
+cron jobs can be very useful to automate repetitive tasks according to our need.
+
+We need to enter below lines in crobtab by:
+
+ testmachine@myworld-linux:~$ crontab -e
+
+0 0 * * 0 /path/to/command
+
+Where,
+
+1 => is the Minute (0-59)
+2 => is the Hours (0-23)
+3 => is the Day (0-31)
+4 => is the Month (0-12 [1 == January])
+5 => is the Day of the week(0-7 [7 or 0 == sunday])
+/path/to/command – Script or command name want to schedule
+
+$0
+
+The filename of the current script.
+
+2	
+$n
+
+These variables correspond to the arguments with which a script was invoked. 
+Here n is a positive decimal number corresponding to the position of an argument (the first argument is $1, the second argument is $2, and so on).
+
+3	
+$#
+
+The number of arguments supplied to a script.
+
+4	
+$*
+
+All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.
+
+5	
+$@
+
+All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.
+
+6	
+$?
+
+The exit status of the last command executed.
+
+7	
+$$
+
+The process number of the current shell. For shell scripts, this is the process ID under which they are executing.
+
+8	
+$!
+
+The process number of the last background command
+
+fstab is a system configuration file on the Linux operating system that contains information about major filesystems. 
+This file is located in /etc directory and can be viewed like “cat /etc/fstab”.
+
+We have set steps to recovery system from ctrl+D error.
+
+Boot system using bootable CV/DVD of Linux of the current version installed
+Read ctrl+D error for the exact issue
+Connect using Root User and it will connect you in single-user mode
+Access /etc/fstab file and make required changes 
+Try normal system reboot
+
+
+Extract an archive:
+tar xfv archive.tar
+Legend: (x = extract, f = file, v = verbose)
+Create an archive with files or folder:
+tar cfv archive.tar file1 file2 file3
+Legend: (c = create)
+Create compressed archives:
+tar cfzv archive.tar file1 file2 file3
+Legend: (z = compress with gzip)
+Show all files of an archive:
+tar tvf archive.tar
+
+
+Create a compressed file:
+gzip file
+Result: file.gz
+Decompress a file:
+gunzip file
+Combining files in a compressed archive:
+tar cfvz archive.tar.gz file1 file2
+Result: archiv.tar.gz
+Decompress and extract an archive:
+tar xfvz archive.tar.gz
+
+Combining individual files in a compressed archive:
+zip archive.zip file1 file2
+Combining complete folders in a compressed archive:
+zip -r archive.zip folder1 folder2 folder3
+Decompress and extract an archive:
+unzip archive.zip
+Show all files of an archive:
+unzip -l archive.zip
+
+Explain the usage of SED command with examples?
+SED command in UNIX stands for stream editor, which is used to make changes to file content.
+
+It can be used to find and replace strings or patterns without opening a file
+
+The default behavior is that  the SED command replaces the first occurrence of a pattern in each and it won’t replace the second, third or multiple occurrence in the line.
+
+If we use the ‘g’ option along with the above command then SED command will replace all Unix strings with Linux globally ( g stands for globally) .
+
+sed 's/unix/linux/g' sample.txt
+
+
+Write the command with examples to count the number of lines ,words and characters in a file?
+This can be done using wc command (word count)-
+
+#Number of lines
+
+$ wc -l knowledgehut.txt
+4 knowledgehut.txt
+#Number of words 
+
+$ wc -w knowledgehut.txt
+3 knowledgehut.txt
+#Number of characters 
+
+$ wc -m knowledgehut.txt
+19 knowledgehut.txt
+
+What is the command to find all the files and directories having 777 permissions ?
+find –perm option is used to find files based on permissions
+
+Here "." or period denotes the current directory
+
+$ find . -perm 777
+
+“ls” Command comes up with multiple options:-
+
+l This option will show file & directory permissions in rwxrwxrwx format for user, group & others
+a This option allows you to view hidden & system files
+i This option gives you inode details of files
+s Helps you to list down file size
+
+Explain /proc filesystem?
+
+/proc is a virtual file system that provides detailed information about the Linux kernel, hardware, and running processes. 
+/prod is a generic file available in all flavours of Linux. 
+Files under /proc directory named as Virtual files. These files are created when the system boots up and dissolve on shutdown. 
+It contains information about running processes and works as an information zone for the kernel.
+
+/proc is also a hidden tool for a system administrator for analyzed and troubleshooting performance and system bottleneck related issues.
+
+ How to find all the regular files in a directory  ?
+
+Ans: using the command ‘find /<directory -type f’.
+
+Q:30 What is load average in Linux ?
+
+Ans: Load  Average is defined as the average sum of the number of process waiting in the run queue and number of process currently executing over the period 
+of 1,5 and 15  minutes. Using the ‘top’ and ‘uptime’ command we find the load average of a Linux sever.
+
+Linux Command To List Current Logged In Users
+w command – Shows information about the users currently on the machine, and their processes.
+who command – Display information about users who are currently logged in.
+users command – See the login names of the users currently on the system, in sorted order, space separated, on a single line. 
+It reads all information from /var/run/utmp file.
+
+Linux / UNIX: Find Out If File Exists With Conditional Expressions in a Bash Shell
+
+#!/bin/bash
+FILE="$1"
+ 
+if [ -f "$FILE" ];
+then
+   echo "File $FILE exist."
+else
+   echo "File $FILE does not exist" >&2
+fi
+Save and execute the script:
+$ chmod +x script.sh
+$ ./script.sh /path/to/file
+$ ./script.sh /etc/resolv.conf
+
+
+chmod [OPTIONS] [ugoa…][-+=]perms…[,…] FILE...
