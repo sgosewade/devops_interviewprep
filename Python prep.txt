@@ -150,18 +150,20 @@ str2 = str.replace(":"," ")
 
 
 list1 = [1,2,3,4,5,6,7,8,9,1,2,3,4,5]
-dupNum = []
-sameNum = []
+l1 = []
+l2 = []
 
 for x in list1:
-	if x not in sameNum:
-		sameNum[x] = 1
+	if x not in l1:
+		l1.append(x)
 	else:
-		if sameNum[x] == 1
-			dupNum.append(x)
-		sameNum[x] += 1
+	    print(x,end=' ')
+	    l2.append(x)
 
-print(dupNum)
+print(l2)
+op:1 2 3 4 5 
+[1, 2, 3, 4, 5]
+
 
 #2) Reverse words in a given String in Python ( i/p : Hyderabad is the capital of Telangana o/p : Telangana of capital the is Hyderabad)
 
