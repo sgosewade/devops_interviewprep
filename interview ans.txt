@@ -37,7 +37,12 @@ Setting up tools and required infrastructure
 Coordination and communication within the team and with customers
 Providing written knowledge transfer material
 
-
+Ability to use version control software such as GIT and SVN.
+Well versed with CI/CD tools such as Jenkins, Ansible ,Docker, Python and shell scripting
+Knowledge of computer equipment and ability to develop complex software to satisfy design objectives.
+Document and demonstrate solutions by developing documentation, flowcharts, layouts, diagrams, charts, code comments and clear code.
+Prepare and install solutions by determining and designing system specifications, standards and programming.
+Has mentored junior software developers on design patterns, development best practices and DevOps trade-offs.
 
 weakness:
 in situations where there's a deadline to be met or a task which is complex I tend to put all my focus in there and wont budge till it is done and 

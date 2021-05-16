@@ -51,3 +51,11 @@ Run Docker Compose file: Docker-compose up -d
 List the entire process: Docker ps
 Scale a service - Docker Compose up -d -scale
 Use YAML files to configure application services - Docker Compose.yml
+
+
+
+Cloud load balancing is defined as the method of splitting workloads and computing properties in a cloud computing. 
+It enables enterprise to manage workload demands or application demands by 
+distributing resources among numerous computers, networks or servers. 
+Cloud load balancing includes holding the circulation of workload traffic and demands that exist over the Internet.
+
