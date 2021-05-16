@@ -150,18 +150,20 @@ str2 = str.replace(":"," ")
 
 
 list1 = [1,2,3,4,5,6,7,8,9,1,2,3,4,5]
-dupNum = []
-sameNum = []
+l1 = []
+l2 = []
 
 for x in list1:
-	if x not in sameNum:
-		sameNum[x] = 1
+	if x not in l1:
+		l1.append(x)
 	else:
-		if sameNum[x] == 1
-			dupNum.append(x)
-		sameNum[x] += 1
+	    print(x,end=' ')
+	    l2.append(x)
 
-print(dupNum)
+print(l2)
+op:1 2 3 4 5 
+[1, 2, 3, 4, 5]
+
 
 #2) Reverse words in a given String in Python ( i/p : Hyderabad is the capital of Telangana o/p : Telangana of capital the is Hyderabad)
 
@@ -294,6 +296,39 @@ print(reversed) #print the reversed string
 
 https://linuxhint.com/python_string_methods/
 
+Module: The module is a simple Python file that contains collections of functions and global variables and with having a .py extension file. It is an executable file and to organize all the modules we have the concept called Package in Python.
+
+Example: Save the code in file called demo_module.py
+
+def myModule(name):
+    print("This is My Module : "+ name)
+Import module named demo_module and call myModule function inside it.
+
+import demo_module
+  
+demo_module.myModule("Math")
+Output:
+
+This is My Module : Math
+Package: The package is a simple directory having collections of modules. This directory contains Python modules and also having __init__.py file by which the interpreter interprets it as a Package. The package is simply a namespace. The package also contains sub-packages inside it.
+
+
+
+
+Example:
+
+Student(Package)
+| __init__.py (Constructor)
+| details.py (Module)
+| marks.py (Module)
+| collegeDetails.py (Module)
+Library: The library is having a collection of related functionality of codes that allows you to perform many tasks without writing your code. It is a reusable chunk of code that we can use by importing it in our program, we can just use it by importing that library and calling the method of that library with period(.).
+
+Example: Importing pandas library and call read_csv method using alias of pandas i.e. pd.
+
+import pandas as pd
+  
+df = pd.read_csv("file_name.csv")
 
 
 
