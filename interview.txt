@@ -14,7 +14,7 @@ git sequnce of creatinf/cloning
 if you add new to git
 if you modify existing file from the repo
 git snapshot ===git log details
-get last n number of commit details using git log
+get last n number of commit details using git log - git log -n
 how will you know if your file/changes is checkedin/pushed or not
 git status | git diff |git log
 search for merge question in git
@@ -43,25 +43,235 @@ dangling pointer
 free 
 malloc calloc
 Q1) Introduce yourself technically. Q2) Asked about my projects. Q3) Asked about my educational background. 
-19)What is a Stack section? Q20)How will be variables allocated in memory? How will you access heap? Q21)How many types of interrupts are there?
-Why semaphores are not used for ISRs? Q26)How do you implement threads? Q27)What is the basic difference betw. multiple processes and multiple child processes?
+19)What is a Stack section? 
+Q20)How will be variables allocated in memory? 
+How will you access heap? Q21)How many types of interrupts are there?
+Why semaphores are not used for ISRs? 
+Q26)How do you implement threads? 
+Q27)What is the basic difference betw. multiple processes and multiple child processes?
 vvvvvimmpppppppQ6) What is the size of this data structure? (I answered about structure padding as he was expecting the same answer from me)
 Difference between Threads & Process
 1. What is a static variable? 
+Static variables have a property of preserving their value even after they are out of their scope
+Hence, static variables preserve their previous value in their previous scope and are not initialized again in the new scope.
+i) A static int variable remains in memory while the program is running. 
+A normal or auto variable is destroyed when a is function called where the variable was declared is over.
+ii)Static variables are allocated memory in data segment, not stack segment.
+iii)Static variables (like global variables) are initialized as 0 if not initialized explicitly. 
+iv) In C, static variables can only be initialized using constant literals.
+The reason for this is simple: All objects with static storage duration must be initialized (set to their initial values) before execution of main() starts. 
+So a value which is not known at translation time cannot be used for initialization of static variables.
+
 2. What the difference between static and constant variable? 
+Const Variables:
+By declaring this variable, it occupies memory. But we cannot update the value of constant type variable directly.
+Const variables are a promise that you are not going to change its value anywhere in the program. If you do it, it will complain.
+
+static Variables:
+static is a variable. The value can change, but the variable will persist throughout the execution of the program even if the variable is declared in a function. 
+It is equivalent to a global variable who's usage scope is the scope of the block they have been declared in, but their value's scope is global.
+
+mohd mujahid pasha
+
 3. How do you declare a const pointer to an integer variable? 
+int* const ptr2{ &value }; // ptr2 points to an "int", so this is a const pointer to a non-const value.
+
 4. How do you declare a pointer to an integer constant? 
+const int* ptr1{ &value }; // ptr1 points to a "const int", so this is a pointer to a const value.
+
 5. What are the stages of compilation?
+Four Steps of Compilation: preprocessing, compiling, assembly, linking.
+Preprocessing
+Removes comments from the source code.
+Performs Macro expansion.
+and Also expansion of header files.
+
+Compiling:
+It takes the output of the preprocessor and generates assembly language, 
+an intermediate human readable language, specific to the target processor.
+Assembly:
+The assembler will convert the assembly code into pure binary code or machine code (zeros and ones). 
+This code is also known as object code.
+Linking:
+The linker merges all the object code from multiple modules into a single one. 
+If we are using a function from libraries, linker will link our code with that library function code.
+In static linking, the linker makes a copy of all used library functions to the executable file. 
+In dynamic linking, the code is not copied, it is done by just placing the name of the library in the binary file.
 
 global static vs local static linkage(scope)
-null void
+
+
+Static global variable:
+A static global variable is a global variable that can only be accessed by functions in the same C program file as the variable.
+Implementation:
+
+the C compiler will forbid you to link a static global variable in another C program file
+(So this error is only detected in the link phase)
+
+Static local variable:
+A static local variable is created at the start of the program (just like the global variables)
+The only difference is this kind of variables has a local scope:
+The C compiler will forbid you to use a static local variable outside the function in which the variable is defined
+
+
 how to change value of constant variable in c
+The variables declared using const keyword, get stored in . rodata segment, but we can still access the variable through the pointer and change the value of that variable. 
+By assigning the address of the variable to a non-constant pointer, We are casting a constant variable to a non-constant pointer.
+
+//Write C code here
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	const int var = 10;
+
+	int *ptr = &var;
+	*ptr = 12;
+
+	printf("var = %d\n", var);
+
+	return 0;
+}
+
+
 calloc malloc realloc free 
+Syntax of malloc()
+ptr = (castType*) malloc(size);
+Example
+
+ptr = (float*) malloc(100 * sizeof(float));
+
+Syntax of calloc()
+ptr = (castType*) calloc(n, size);
+Example
+
+ptr = (float*) calloc(25, sizeof(float));
+
+The malloc() function allocates memory and leaves the memory uninitialized, 
+whereas the calloc() function allocates memory and initializes all bits to zero.
+
+Syntax of free()
+free(ptr);
+This statement frees the space allocated in the memory pointed by ptr.
+
+realloc()
+If the dynamically allocated memory is insufficient or more than required, 
+you can change the size of previously allocated memory using the realloc() function.
+
+Syntax of realloc()
+ptr = realloc(ptr, x);
+Here, ptr is reallocated with a new size x.
+
+example: int *ptr
+		 ptr = (int*) malloc( 25 * sizeof(int));
+		 // rellocating the memory
+		 ptr = realloc(ptr, 50 * sizeof(int));
+
 #define and constant diff
+https://www.geeksforgeeks.org/interesting-facts-preprocessors-c/
+When we use define for a constant, the preprocessor produces a C program where 
+the defined constant is searched and matching tokens are replaced with the given expression. For example in the following program max is defined as 100.
+#define max 100
+
+const variables are actual variables like other normal variables. 
+By declaring this variable, it occupies memory unit. 
+But we cannot update the value of constant type variable directly. We can change it using some pointer values.
+
 storage classes
+https://www.geeksforgeeks.org/storage-classes-in-c/
+So an extern variable is nothing but a global variable initialized with a legal value where it is declared in order to be used elsewhere. 
+
+Static variables have a property of preserving their value even after they are out of their scope! Hence, 
+static variables preserve the value of their last use in their scope. So we can say that they are initialized only once
+and exist till the termination of the program. 
+
+register storage class declares register variables which have the same functionality as that of the auto variables. 
+The only difference is that the compiler tries to store these variables in the register of the microprocessor if a free register is available. 
+This makes the use of register variables to be much faster than that of the variables stored in the memory during the runtime of the program. 
 static and null
+
+Void pointer is a specific pointer type – void * – a pointer that points to some data location in storage, which doesn’t have any specific type. 
+Void refers to the type. Basically the type of data that it points to is can be any.
+
+	int x=5;
+	void *ptr;
+    ptr = &x;
+  
+    // (int*)ptr - does type casting of void 
+    // *((int*)ptr) dereferences the typecasted 
+    // void pointer variable.
+    printf("Integer variable is = %d", *( (int*) ptr) );
+
+NULL Pointer
+
+NULL Pointer is a pointer which is pointing to nothing. In case, if we don’t have address to be assigned to a pointer, then we can simply use NULL.
+
+#include <stdio.h>
+int main()
+{
+    // Null Pointer
+    int *ptr = NULL;
+      
+    printf("The value of ptr is %p", ptr);
+    return 0;
+}
+
+
+Wild pointer
+
+A pointer which has not been initialized to anything (not even NULL) is known as wild pointer. 
+The pointer may be initialized to a non-NULL garbage value that may not be a valid address.
+
+Important Points
+
+NULL vs Uninitialized(Wild) pointer – An uninitialized pointer stores an undefined value.
+A null pointer stores a defined value, but one that is defined by the environment to not be a valid address for any member or object.
+NULL vs Void Pointer – Null pointer is a value, while void pointer is a type
+
+int main()
+{
+    int *p;  /* wild pointer */
+  
+    int x = 10;
+  
+    // p is not a wild pointer now
+    p = &x;
+  
+    return 0;
+}
 dangling ptr
+https://www.geeksforgeeks.org/dangling-void-null-wild-pointers/
+A pointer pointing to a memory location that has been deleted (or freed) is called dangling pointer. 
+There are three different ways where Pointer acts as dangling pointer
+i.De-allocation of memory
+
+// Deallocating a memory pointed by ptr causes
+// dangling pointer. Can be solved by setting ptr=Null
+ii.Function Call
+
+// The pointer pointing to local variable becomes
+// dangling when local variable is auto. Can be solved making var as static
+iii.Variable goes out of scope
+
+The pointer pointing to local variable becomes
+// dangling when local variable goes out of scope.
+{
+int *ptr;
+   {
+       int ch;
+       ptr = &ch;
+   } 
+}
+
 What is the difference between struct and union in C?
+A structure is a user-defined data type available in C that allows to combining data items of different kinds. 
+Structures are used to represent a record. 
+
+A union is a special data type available in C that allows storing different data types in the same memory location. 
+You can define a union with many members, but only one member can contain a value at any given time. 
+Unions provide an efficient way of using the same memory location for multiple purposes. 
+
+https://www.geeksforgeeks.org/difference-structure-union-c/#:~:text=A%20structure%20is%20a%20user,used%20to%20represent%20a%20record.&text=A%20union%20is%20a%20special,in%20the%20same%20memory%20location.
 
 https://www.interviewbit.com/c-interview-questions/
 https://www.geeksforgeeks.org/qualcomm-interview-set-2/

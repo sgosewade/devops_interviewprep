@@ -25,6 +25,33 @@ Docker Hub is a service provided by Docker for finding and sharing container ima
 It is the world’s largest repository of container images with an array of content sources including container community developers, 
 open source projects and independent software vendors (ISV) building and distributing their code in containers.
 
+Sample docker-compose.yml file looks like:
+
+version: "7"
+services:
+  testservice:
+    # replace username/repo:tag with your name and image details
+    image: <image name>
+    deploy:
+      replicas: 10
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 70M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "9080:80"
+    networks:
+      - webnet
+This docker-compose.yml is reflected upon below:
+
+Pull the image from Docker registry .
+Run 10 instances of the pulled image as a service called testservice, with setting limits on each one as, 20% of a single core of CPU time and 70 MB of RAM.
+Immediately restart containers on failure.
+Map port 9080 on the host system to test services port 80.
+test services containers share port 80 through a load-balanced network called webnet.
+
 Docker Hub provides the following major features:
 
 Repositories: Push and pull container images.
@@ -59,3 +86,79 @@ It enables enterprise to manage workload demands or application demands by
 distributing resources among numerous computers, networks or servers. 
 Cloud load balancing includes holding the circulation of workload traffic and demands that exist over the Internet.
 
+Sample Dockerfile :
+
+FROM ubuntu:16.04
+COPY . /app
+RUN make /app
+CMD python /app/app.py
+
+Following commands could be used to manage volumes:
+
+docker volume create <name> to create the volume
+docker volume ls to list the volumes available to you
+docker volume inspect <name> to get more details about the volume like path, drivers etc.
+docker volume rm <name> to remove the container.
+docker volume prune to remove unused volumes
+
+FROM instruction    
+Usage :
+
+FROM <image> [AS <name>]
+Or
+
+FROM <image>[:<tag>] [AS <name>]
+Or
+
+FROM <image>[@<digest>] [AS <name>]
+FROM helps to set the base image for the following instructions in the Dockerfile. The base image could be one pulled from the remote public repository or a local image built by the user. FROM can appear multiple times in Dockerfile and each time it appears it clears any stage created from previous instructions. Hence usually an AS <NAME> is added to the FROM instruction to identify the last image created just before the FROM instruction.  
+
+RUN instruction
+Usage:
+
+RUN <command> (shell form, the command is run in a shell, which by default is /bin/sh -c on Linux or cmd /S /C on Windows)
+RUN ["executable", "param1", "param2"] (exec form)
+RUN instruction creates a new layer on the current image which is used for the next step in Dockerfile.
+RUN cache is valid for the next build provided “docker build” command is not run with “--no-cache” flag.
+
+RUN in the executable form doesn’t do shell processing like variable substitution.
+
+CMD instruction
+Usage:
+
+CMD ["executable","param1","param2"] (exec form, this is the preferred form)
+CMD ["param1","param2"] (as default parameters to ENTRYPOINT)
+CMD command param1 param2 (shell form)
+CMD provides defaults for executing container. 
+There could only be one CMD instruction but if there are many, only the last one has the effect. 
+If CMD is providing default arguments for the ENTRYPOINT instruction, then the CMD and ENTRYPOINT instructions should be specified with the JSON array format.  
+
+ADD instruction
+Usage:
+
+ADD [--chown=<user>:<group>] <src>... <dest>
+ADD [--chown=<user>:<group>] ["<src>",... "<dest>"] (this form is required for paths containing whitespace)
+The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.
+
+COPY instruction
+Usage:
+
+COPY [--chown=<user>:<group>] <src>... <dest>
+COPY [--chown=<user>:<group>] ["<src>",... "<dest>"] (this form is required for paths containing whitespace)
+The COPY instruction copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.Main difference between COPY and ADD is that ADD supports the source to be a URL or tar file.
+
+ENTRYPOINT
+Usage:
+
+ENTRYPOINT ["executable", "param1", "param2"] (exec form, preferred)
+ENTRYPOINT command param1 param2 (shell form)
+An ENTRYPOINT allows you to configure a container that will run as an executable. 
+As a best practice ENTRYPOINT should be defined when using the container as an executable and 
+CMD should be used as a way of defining default arguments for an ENTRYPOINT command.
+CMD could be overridden while running a container with arguments.
+
+WORKDIR
+Usage:
+
+WORKDIR /path/to/workdir
+The WORKDIR instruction sets the working directory for RUN, CMD, ENTRYPOINT, COPY and ADD instructions in the Dockerfile.

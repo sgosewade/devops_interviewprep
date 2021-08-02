@@ -1,0 +1,154 @@
+https://www.edureka.co/community/cloud-computing/gcp
+
+
+I want to expose the deployment from the command line.
+
+$ kubectl expose deployment hello-server --type LoadBalancer --port 80 --target-port 8080
+
+I want to copy the files from the remote system to the local system. How can I do that with the command line?
+
+$ gcloud cloud-shell scp cloudshell:~/REMOTE-DIR localhost:~/LOCAL-DIR
+
+I want to update the rule so that it can allow port 80. 
+
+$ gcloud compute firewall-rules update MY-RULE --allow tcp:80
+
+How can I delete this cluster from the command line?
+
+gcp gcp-cloud gcp-instance gcp-project gke
+
+You can delete your GKE Cluster from the command line. GCP Cloud has its command. You can use the below command to delete your cluster.
+
+$ gcloud container clusters delete cluster-name
+
+I want to create a Kubernetes Cluster on top of GCP Cloud.
+
+A cluster consists of at least one cluster control plane machine and multiple worker machines called nodes. Nodes are Compute Engine virtual machine (VM) instances that run the Kubernetes processes necessary to make them part of the cluster. You deploy applications to clusters, and the applications run on the nodes.
+
+The following command creates a one-node cluster. Replace cluster-name with the name of your cluster.
+
+$ gcloud container clusters create cluster-name --num-nodes=1
+
+v1.compute.instances.setMetadata
+
+PRECONDITION_FAILED
+projects/genashtim-291109/zones/asia-east2-c/instances/bitnami-lampstack-4265
+
+Virtual Private Cloud (VPC) in Google Cloud provides networking functionality to Compute Engine VM instances, GKE containers, 
+and the flexible environment of App Engine.
+
+Basically, it provides networking for your cloud-based services. These services are global, scalable, and flexible.
+
+The condition set in the request's If-Match or If-None-Match HTTP request header was not met. 
+See the ETag section of the HTTP specification for details. Also check the value of the If-Match HTTP request header. For better understanding, you can visit the official document of GCP.
+
+https://cloud.google.com/resource-manager/docs/core_errors
+
+I have created one project in GCP Cloud. I want to enable the compute service in this project. But I am getting this below error.
+
+$ gcloud services enable compute.googleapis.com --project nadeem-gcp-1234567
+ERROR: (gcloud.services.enable) FAILED_PRECONDITION: Billing must be enabled for activation of service '[compute.googleapis.com, compute.googleapis.com, compute.googleapis.com]' in project '135390206270' to proceed.
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - description: "billing-enabled: Project's billing account is not found. https://console.developers.google.com/project/135390206270/settings"
+    subject: '135390206270'
+    type: serviceusage/billing-enabled
+	
+You need to add the billing account to your project. Otherwise, the GCP cloud will not allow you to enable any services to that project. 
+So go to your billing dashboard and enable the billing account to your project.
+
+I have configured GCP Cloud SDK software in the Windows system. Now I want to launch one instance. How can I do that?
+
+Hi@akhtar,
+
+You can compute service in GCP to launch one instance from the command line. When you will launch one instance, you can provide the network name and other parameters. Otherwise, it will take the default service as shown below.
+
+$ gcloud compute instances create instance-name 
+Created [https://www.googleapis.com/compute/v1/projects/nadeem-gcp-123456/zones/australia-southeast1-b/instances/instance-name].
+NAME           ZONE                    MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP   STATUS
+instance-name  australia-southeast1-b  n1-standard-1               10.152.0.3   35.201.6.115  RUNNING   
+
+
+You're always required to provide a credit card or a bank account in order to verify that you're not a bot (otherwise imagine the spam that they would receive).
+
+Refer the FAQ (https://cloud.google.com/free/docs/frequently-asked-questions)
+
+You won't be charged until you upgrade to a paid account. Google has limits on all of their free tiers to prevent users from going over thresholds.
+
+Note that the Free Tier and Always Free offers have different requirements:
+
+The first is a trial (with a time limit and credit limit) that will ask you to upgrade to a paid account once it's over.
+
+The latter allows you to use cloud services without paying up to a certain usage limit, after which you will be billed at their normal rates. You're only eligible for Always Free if you already have a paid account.
+
+I have one load balancer in GCP Cloud. I want to create a global static IP address to balance the load. How can I do that with the command line?
+
+Global IP addresses can only be attached to global HTTPS, SSL proxy, and TCP proxy load balancers. You can see the following command to create the global IP address.
+
+$ gcloud compute addresses create addr-1 --global
+
+have configured the GCP SDK in the Windows system. I want to create a custom role from a YAML file in GCP. How can I do that?
+
+You can create an IAM role in GCP with the help of a file or with flags. 
+The following command can be used to create an IAM role from a YAML file.
+
+$ gcloud iam roles create ProjectUpdater --organization=12345 --file=role_file_path
+
+You can create an IAM role in GCP with the help of a file or with flags. 
+The following command can be used to create an IAM role from a YAML file.
+
+$ gcloud iam roles create ProjectUpdater --organization=12345 --file=role_file_path
+
+
+You are trying to create the Kubernetes Cluster. 
+But you didn't enable the service. In GCP, you need to enable the service first, then only you can use the service. 
+The following command you can use to enable the service.
+
+$ gcloud services enable <service name>
+
+I have some files in the GCP instance. 
+I want to copy the files from the remote system to the local system. How can I do that with the command line?
+
+You can copy files from the remote system to the local system using the gcloud command. To denote a file in Cloud Shell, prefix the file name with the string "cloudshell". To denote a local file, prefix the file name with the string "localhost" as shown below.
+
+$ gcloud cloud-shell scp cloudshell:~/REMOTE-DIR localhost:~/LOCAL-DIR
+
+I want to pull one docker image to the GCP with the CLI command. 
+But I am new to GCP CLI. Can anyone tell me, how can I do that?
+
+You can use gcloud docker command to pull images to GCP. 
+But before that, you need to configure the GCP CLI in your system.
+
+$ gcloud docker -- pull gcr.io/google-containers/pause:1.0
+
+I have created one Cloud Filestore instance in GCP to document a database. Now I don't need the instance. How can I delete the instance with the CLI command?
+
+You can delete the Firestore instance in GCP with the gcloud command. But you should have the name of the instance.
+
+$ gcloud filestore instances delete NAME --zone=us-central1-c
+
+You can create a rule that allows TCP traffic through port 80. 
+The following gcloud command can be used to perform the task.
+
+$ gcloud compute firewall-rules update MY-RULE --allow tcp:80
+
+How to create a global static IP address in GCP
+
+Global IP addresses can only be attached to global HTTPS, SSL proxy, and TCP proxy load balancers. 
+You can see the following command to create the global IP address.
+
+$ gcloud compute addresses create addr-1 --global
+
+How to create a custom role from a YAML file in GCP
+
+You can create an IAM role in GCP with the help of a file or with flags. 
+The following command can be used to create an IAM role from a YAML file.
+
+$ gcloud iam roles create ProjectUpdater --organization=12345 --file=role_file_path
+
+Shared VPC overview
+Shared VPC allows an organization to connect resources from multiple projects to a common Virtual Private Cloud (VPC) network, 
+so that they can communicate with each other securely and efficiently using internal IPs from that network. 
+When you use Shared VPC, you designate a project as a host project and attach one or more other service projects to it. 
+The VPC networks in the host project are called Shared VPC networks. 
+Eligible resources from service projects can use subnets in the Shared VPC network.

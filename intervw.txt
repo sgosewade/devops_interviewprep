@@ -9,7 +9,8 @@ I work under there automotive bu which comes under thier embeddded domain servic
 Hi I am Sonali.
 I started off career as an Engineer with Tata Elxsi 
 I am a Senior Engineer with more than 3 years of work exp in software development and devops practices
-I work under there automotive bu which is a part of thier embeddded domain services where worked on development and integration of Infotainemnet systems, 
+I work under there automotive bu which is a part of thier embeddded domain 
+services where worked on development and integration of Infotainemnet systems, 
 Instrument Clusters, ecu,etc
 My responsibilities inlcuded:
 Developing, Maintaining and improving existing code and peer review code changes

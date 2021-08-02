@@ -1,20 +1,23 @@
 Tell me about yorself:
 
 Hi I am Sonali.
-I have been working with Tata elxsi Pune for more than past 3 yrs now as a Senior Engineer.
+I have been working with Tata elxsi Pune for more than past 3.5 yrs now as a Senior Engineer.
 
-I am a Senior Engineer with more than 3 years of work exp in softare development and devops
+I am a Senior Engineer with more than 3 .5years of work exp in softare development and devops
 I work under there automotive bu which comes under thier embeddded domain services
 
 Hi I am Sonali.
-I started off career as an Engineer with Tata Elxsi 
+I started off my career as an Engineer with Tata Elxsi 
 I am a Senior Engineer with more than 3.5 years of work exp in software development and devops practices
-I work under there automotive bu which is a part of thier embeddded domain services where worked on development and integration of Infotainemnet systems, 
+I work under there automotive bu which is a part of thier embeddded domain services where worked on development
+and integration of Infotainemnet systems, 
 Instrument Clusters, ecu,etc
 My responsibilities inlcuded:
 Developing, Maintaining and improving existing code and peer review code changes
 Defining and setting development, test, release, processes for DevOps operation
 Selecting and deploying appropriate CI/CD tools
+Setting up tools and required infrastructure
+Troubleshooting techniques and fixing the code bugs
 Mentoring and guiding the team members 
 Coordination and communication within the team and with customers
 
@@ -22,9 +25,6 @@ In that role my major accomplishment was that we suggested the client with some 
 approved by them Using those toolchains improved the performance and saved lot of time
 I understand that for this position of Build and Intergation engineer that you are hiring for you are looking for someone with strong knowledege on 
 SW release life cycle, build processes and integration techniques
-
-
-
 
 Roles and responsibilities:
 Maintaining and improving existing codebases and peer review code changes
@@ -49,3 +49,22 @@ in situations where there's a deadline to be met or a task which is complex I te
 in these situations I also tend to make my colleagues also work hard for it. Where i realised that taking breaks in between helps a lot and makes 
 you think clearly and you should not sacrifice that sleep which makes your intellectual capacity more clearer and understood everyone works in a 
 diffrent way and you should not interfare with thier thinking process
+
+ What are the various branching strategies used in the version control system?
+Branching is a very important concept in version control systems like git which facilitates team collaboration. Some of the most commonly used branching types are:
+
+Feature branching
+
+This branching type ensures that a particular feature of a project is maintained in a branch.
+Once the feature is fully validated, the branch is then merged into the main branch.
+Task branching
+
+Here, each task is maintained in its own branch with the task key being the branch name.
+Naming the branch name as a task name makes it easy to identify what task is getting covered in what branch.
+Release branching
+
+This type of branching is done once a set of features meant for a release are completed, they can be cloned into a branch called the release branch. Any further features will not be added to this branch.
+Only bug fixes, documentation, and release-related activities are done in a release branch.
+Once the things are ready, the releases get merged into the main branch and are tagged with the release version number.
+These changes also need to be pushed into the develop branch which would have progressed with new feature development.
+The branching strategies followed would vary from company to company based on their requirements and strategies.
